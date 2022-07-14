@@ -43,7 +43,7 @@ namespace WebAPI.BL.BLL
                 
             }
 
-            else if (txnReq.myspin == win2)
+            else if (txnReq.myspin.IndexOf(win2,StringComparison.OrdinalIgnoreCase)>=0)
             {
                 checkWin = txnReq.stake * 2;
                 

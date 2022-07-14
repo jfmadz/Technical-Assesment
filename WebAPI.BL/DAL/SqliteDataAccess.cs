@@ -23,7 +23,7 @@ namespace WebAPI.BL.DAL
             {
                 using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    var output = cnn.Query<ViewPrevResponseDTO>("select id,spinoutcome from 'Transaction'", new DynamicParameters());
+                    var output = cnn.Query<ViewPrevResponseDTO>("select * from 'Transaction'", new DynamicParameters());
                     return output.ToList();
                 }
             }
@@ -41,7 +41,7 @@ namespace WebAPI.BL.DAL
             {
                 using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    cnn.Execute($"insert into 'Transaction' (spinoutcome,spin,stake,payout) values (@spinoutcome,@spin,@stake,@payout)  ",
+                    cnn.Execute($"insert into 'Transaction' (spinoutcome,spin,stake,payout) values (@spinoutcome,@mypick,@stake,@payout)  ",
                         txnResp);
                      
                 }
