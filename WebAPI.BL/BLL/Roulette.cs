@@ -62,9 +62,7 @@ namespace WebAPI.BL.BLL
             txnResp.stake = txnReq.stake;
             txnResp.payout = checkWin;
 
-            exec.Transaction(txnResp);
-
-            
+            exec.Transaction(txnResp);          
 
             return txnResp;
             
